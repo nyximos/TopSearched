@@ -4,11 +4,10 @@ fun main() {
     val keywordsFilePath = "src/main/resources/popular_keywords.csv"
 
     File(keywordsFilePath).bufferedReader().use { reader ->
-        var line: String? = reader.readLine()
-        while (line != null) {
-            println(line)
+        reader.readLine()
 
-            line = reader.readLine()
+        for (line in reader.lines()) {
+            println(line)
         }
     }
 }
