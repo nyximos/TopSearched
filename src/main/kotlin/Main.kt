@@ -24,7 +24,7 @@ fun main() {
 }
 
 fun printMap(map: Map<LocalTime, String>, logger: org.slf4j.Logger) {
-    for ((key, value) in map) {
+    map.forEach { (key, value) ->
         logger.info("$key -> $value")
     }
 }
