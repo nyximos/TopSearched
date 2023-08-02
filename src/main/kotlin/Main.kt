@@ -15,7 +15,7 @@ fun main() {
     File(keywordsFilePath).bufferedReader().use { reader ->
         reader.readLine()
 
-        for (line in reader.lines()) {
+        reader.lines().forEach { line ->
             val (key, value) = line.split(",")
             val dateTime = LocalDateTime.parse(key, formatter)
             val localTime = dateTime.toLocalTime().withHour(0)
@@ -34,7 +34,7 @@ fun main() {
         .sortedByDescending { it.second }
         .take(10)
 
-    for ((value, count) in trends) {
+    trends.forEach { (value, count) ->
         logger.info("$value: $count ")
     }
 }
